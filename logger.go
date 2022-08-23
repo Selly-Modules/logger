@@ -8,7 +8,11 @@ import (
 
 type (
 	// LogData for tracking
-	LogData map[string]interface{}
+	LogData struct {
+		Source  string
+		Message string
+		Data    interface{}
+	}
 )
 
 var (
@@ -19,7 +23,7 @@ var (
 // Init ...
 func Init(appName, server string) {
 	cfg := zap.Config{
-		Encoding:      "json",
+		Encoding:      "console",
 		Level:         zap.NewAtomicLevelAt(zapcore.DebugLevel),
 		OutputPaths:   []string{"stdout"},
 		InitialFields: map[string]interface{}{"server": server, "capture": appName},
