@@ -7,12 +7,13 @@ import (
 )
 
 type (
-	// LogData for tracking
-	LogData struct {
+	Data struct {
 		Source  string
 		Message string
 		Data    interface{}
 	}
+
+	Map map[string]interface{}
 )
 
 var (
