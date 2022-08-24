@@ -7,7 +7,7 @@ import (
 )
 
 type (
-	Data struct {
+	LogData struct {
 		Source  string
 		Message string
 		Data    interface{}
